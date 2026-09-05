@@ -1,0 +1,58 @@
+> Actúa como un desarrollador experto en Python. Necesito que programes un proyecto estructurado en exactamente dos archivos: `main.py` y `funciones.py`, basado en un diagrama de flujo y pseudocódigo específico.
+> **Requisitos generales:**
+> * El código debe estar listo para ejecutarse en un IDE.
+> * Todo el desarrollo lógico debe ir en `funciones.py`.
+> * `main.py` solo debe importar `funciones.py` y orquestar el flujo de ejecución de las funciones.
+> 
+> 
+> **Especificaciones para `funciones.py`:**
+> Debes crear las siguientes funciones respetando estrictamente esta lógica:
+> 1. `registrar_comercios()`:
+> * Debe preguntar la cantidad de comercios a registrar (número de interacciones) y hacer un ciclo `for` con ese número.
+> * Dentro del ciclo, crear un diccionario para almacenar la información de cada comercio con las claves: `NIT`, `nombre`, `tipo`, `empleado`, `meta_semanal` y `consumos` (inicializado como una lista vacía o null).
+> * Almacenar cada diccionario en una lista creada fuera del ciclo y retornar esa lista de comercios.
+> 
+> 
+> 2. `registrar_consumo(comercios)`:
+> * Recibe la lista de comercios. Implementar un ciclo `for` para recorrer cada comercio.
+> * Por cada comercio, pedir por teclado 4 datos de consumo semanales (validando que sean > 0 kWh).
+> * Actualizar la clave `consumos` del diccionario del comercio respectivo con esta lista de 4 datos.
+> * Retornar la lista de comercios actualizada.
+> 
+> 
+> 3. `calcular_promedio(consumo)`:
+> * Recibe la lista de los 4 consumos de un comercio.
+> * Crear una variable acumuladora `suma = 0`.
+> * Recorrer la lista de consumos con un ciclo `for`, sumando cada valor a la variable.
+> * Fuera del ciclo, dividir la suma entre 4 para obtener el promedio y retornarlo.
+> 
+> 
+> 4. `calcular_variacion(consumo)`:
+> * Recibe la lista de los 4 consumos.
+> * Calcular la diferencia restando el último consumo (posición 3) menos el primer consumo (posición 0).
+> * Dividir el resultado de esa sustracción entre el primer consumo (posición 0) y multiplicar por 100 para sacar el porcentaje. Retornar este valor.
+> 
+> 
+> 5. `clasificar_consumo(promedio, meta, variacion)`:
+> * Recibe el promedio, la meta semanal y la variación.
+> * Evaluar múltiples condiciones y retornar un string con la clasificación:
+> * "Eficiente": si el promedio <= meta y la variación es favorable.
+> * "En Observación": si el promedio <= meta pero hay variaciones de alerta.
+> * "Alto": si el promedio > meta hasta por un 20%.
+> * "Crítico": si el promedio supera la meta en más del 20%.
+> 
+> 
+> 6. `generar_informe(comercios)`:
+> * Recibe la lista de comercios. Usar un ciclo `for` para recorrerla.
+> * Dentro del ciclo, llamar a `calcular_promedio()`, `calcular_variacion()` y `clasificar_consumo()` para obtener los datos de cada uno.
+> * Comparar y guardar cuál es el comercio que tiene el mayor promedio de consumo.
+> * Fuera del ciclo, imprimir en consola un informe final que muestre por cada comercio: nombre, promedio, variación y clasificación. Al final, imprimir los datos del comercio que tuvo el mayor promedio.
+>  
+> 
+> **Especificaciones para `main.py`:**
+> * Importar el módulo `funciones`.
+> * Crear una función `main()` que ejecute el flujo conectando las funciones: llamar a `registrar_comercios()`, pasar el resultado a `registrar_consumo()`, y finalmente pasar los comercios actualizados a `generar_informe()`.
+> * Incluir el bloque `if __name__ == "__main__":` para ejecutar la función main.
+> 
+> 
+> Genera el código completo y coméntalo para entender qué hace cada parte según los requerimientos.
