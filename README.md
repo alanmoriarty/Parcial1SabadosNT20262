@@ -1,3 +1,8 @@
+# Integrantes
+
+* Yety Sanz
+* Andres Piña
+
 # ACDA 1 - Evaluación de Python Básico
 
 ## Envio:
